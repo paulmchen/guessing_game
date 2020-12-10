@@ -8,7 +8,7 @@ fn main() {
     println!("The secret number is: {}", secret_number);
 
     loop {
-        println!("Please input your guess. (a number between 1 and 100)");
+        println!("Please input your guess (a number between 1 and 100)：");
         let mut guess = String::new();
         io::stdin()
             .read_line(&mut guess)
