@@ -2,10 +2,8 @@ use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
 
-fn main() {
-    println!("Guess the number!");
-    let secret_number = rand::thread_rng().gen_range(1, 101);
-    // println!("The secret number is: {}", secret_number);
+fn guess_number(lower: u32, higher:u32) {
+    let secret_number = rand::thread_rng().gen_range(lower, higher+1);
 
     loop {
         println!("Please input your guess (a number between 1 and 100)：");
@@ -30,4 +28,10 @@ fn main() {
             }
         }
     }
+}
+
+
+fn main() {
+    println!("Guess the number!");
+    guess_number(1,100);
 }
