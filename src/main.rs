@@ -5,14 +5,14 @@ use std::io;
 fn main() {
     println!("Guess the number!");
     let secret_number = rand::thread_rng().gen_range(1, 101);
-    println!("The secret number is: {}", secret_number);
+    // println!("The secret number is: {}", secret_number);
 
     loop {
         println!("Please input your guess (a number between 1 and 100)：");
         let mut guess = String::new();
         io::stdin()
             .read_line(&mut guess)
-            .expect("Failed to read line");
+            .expect("Failed to read line.");
 
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
