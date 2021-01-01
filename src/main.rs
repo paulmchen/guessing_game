@@ -2,8 +2,10 @@ use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
 
+// guess a number
 fn guess_number(lower: u32, higher:u32) {
     let secret_number = rand::thread_rng().gen_range(lower, higher+1);
+    let mut attempt:u32 = 0;
 
     loop {
         println!("Please input your guess (a number between 1 and 100)：");
@@ -23,10 +25,11 @@ fn guess_number(lower: u32, higher:u32) {
             Ordering::Less => println!("Too small!"),
             Ordering::Greater => println!("Too big!"),
             Ordering::Equal => {
-                println!("You win!");
+                println!("You win! (after {} attempts)", attempt);
                 break;
             }
         }
+        attempt += 1;
     }
 }
 
