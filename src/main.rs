@@ -4,7 +4,7 @@ use std::cmp::Ordering;
 use std::io;
 
 // Guess a number
-// The range of a number to be guessed is between values of 'lower' and 'higher' parameters specified
+// The range of a number to be guessed is between values of 'lower' and 'higher' parameters (inclusive) specified
 fn guess_number(lower: u32, higher: u32) {
     if lower > higher {
         println!("Incorrect number range specified.");
